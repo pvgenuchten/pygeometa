@@ -1,0 +1,213 @@
+contact:
+  facility:
+    contactinstructions: email
+    country: CAN
+    email: vitali.fioletov@canada.ca
+    fax: null
+    organization: Meteorological Service of Canada (Atmospheric Environment Service)
+    phone: null
+    url: http://exp-studies.tor.ec.gc.ca/e/ozone/ozone.htm
+  main: &id001
+    address: 4905 Dufferin Street
+    administrativearea: Ontario
+    city: Toronto
+    contactinstructions: email
+    country: Canada
+    email: ec.woudc.ec@canada.ca
+    fax: null
+    hoursofservice: 1400h - 2200h EST
+    organization: World Ozone and Ultraviolet Radiation Data Centre
+    phone: null
+    positionname: Data Centre Manager
+    postalcode: M3H 5T4
+    url: https://woudc.org
+  record_owner: *id001
+facility:
+  first_station:
+    date_established: '2015-04-01'
+    geopositioning_method: GPS
+    identifier: SPO
+    name: South Pole
+    program_affiliation:
+    - program: GAW
+      reporting_status:
+      - status: operational
+        valid_period:
+          begin: '2015-04-01'
+          end: now
+    spatiotemporal:
+    - location:
+        crs: 4326
+        geomtype: point
+        point: -24.7999992371,-89.9969482422,2841.0
+      timeperiod:
+        begin: '2015-04-01'
+        end: now
+    territory:
+    - name: ATA
+    type: landFixed
+    url: https://woudc.org/data/stations?id=111
+    wmo_region: antarctica
+  observations:
+  - data_class: UV Radiation
+    dataset: Spectral
+    end_date: '2010-04-01'
+    instrument_model: SUV-100
+    instrument_name: biospherical
+    instrument_number: '3'
+    name: UV Radiation/Spectral/biospherical
+    start_date: '1990-10-17'
+    url: https://woudc.org/archive/Archive-NewFormat/Spectral_1.0_1/stn111/biospherical
+  - data_class: UV Radiation
+    dataset: Spectral
+    end_date: '2014-03-31'
+    instrument_model: SUV-100
+    instrument_name: biospherical
+    instrument_number: '3'
+    name: UV Radiation/Spectral/biospherical
+    start_date: '2010-09-15'
+    url: https://woudc.org/archive/Archive-NewFormat/Spectral_1.0_1/stn111/biospherical
+  - data_class: Ozone
+    dataset: OzoneSonde
+    end_date: '1987-12-30'
+    instrument_model: UNKNOWN
+    instrument_name: undefined sondes
+    instrument_number: UNKNOWN
+    name: Ozone/OzoneSonde/undefined sondes
+    start_date: '1967-01-17'
+    url: https://woudc.org/archive/Archive-NewFormat/OzoneSonde_1.0_1/stn111/undefined
+      sondes
+  - data_class: Ozone
+    dataset: TotalOzone
+    end_date: '2015-12-01'
+    instrument_model: Beck
+    instrument_name: dobson
+    instrument_number: '42'
+    name: Ozone/TotalOzone/dobson
+    start_date: '2013-01-01'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1/stn111/dobson
+  - data_class: Ozone
+    dataset: TotalOzone
+    end_date: '2019-12-01'
+    instrument_model: MKIII
+    instrument_name: brewer
+    instrument_number: '21'
+    name: Ozone/TotalOzone/brewer
+    start_date: '2015-12-09'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1/stn111/brewer
+  - data_class: Ozone
+    dataset: OzoneSonde
+    end_date: '1966-12-14'
+    instrument_model: UNKNOWN
+    instrument_name: carbon-iodine
+    instrument_number: UNKNOWN
+    name: Ozone/OzoneSonde/carbon-iodine
+    start_date: '1966-03-27'
+    url: https://woudc.org/archive/Archive-NewFormat/OzoneSonde_1.0_1/stn111/carbon-iodine/1966
+  - data_class: Ozone
+    dataset: TotalOzone
+    end_date: '2019-12-01'
+    instrument_model: Beck
+    instrument_name: dobson
+    instrument_number: '82'
+    name: Ozone/TotalOzone/dobson
+    start_date: '1963-12-04'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1/stn111/dobson
+  - data_class: Ozone
+    dataset: TotalOzoneObs
+    end_date: '2019-12-31'
+    instrument_model: MKIII
+    instrument_name: brewer
+    instrument_number: '21'
+    name: Ozone/TotalOzoneObs/brewer
+    start_date: '2015-12-09'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzoneObs_1.0_1/stn111/brewer
+  - data_class: UV Radiation
+    dataset: Multi-band
+    end_date: '2014-03-25'
+    instrument_model: GUV-541
+    instrument_name: biospherical
+    instrument_number: '29239'
+    name: UV Radiation/Multi-band/biospherical
+    start_date: '2012-01-31'
+    url: https://woudc.org/archive/Archive-NewFormat/Multi-band_1.0_1/stn111/biospherical
+  - data_class: UV Radiation
+    dataset: Multi-band
+    end_date: '2010-03-25'
+    instrument_model: GUV-541
+    instrument_name: biospherical
+    instrument_number: '29239'
+    name: UV Radiation/Multi-band/biospherical
+    start_date: '2003-01-17'
+    url: https://woudc.org/archive/Archive-NewFormat/Multi-band_1.0_1/stn111/biospherical
+  - data_class: Ozone
+    dataset: TotalOzoneObs
+    end_date: '2012-10-31'
+    instrument_model: MKIII
+    instrument_name: brewer
+    instrument_number: '85'
+    name: Ozone/TotalOzoneObs/brewer
+    start_date: '2008-02-10'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzoneObs_1.0_1/stn111/brewer
+  - data_class: Ozone
+    dataset: TotalOzone
+    end_date: '2016-01-01'
+    instrument_model: MKIII
+    instrument_name: brewer
+    instrument_number: '85'
+    name: Ozone/TotalOzone/brewer
+    start_date: '2012-11-01'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1/stn111/brewer
+  - data_class: Ozone
+    dataset: TotalOzone
+    end_date: '2008-12-01'
+    instrument_model: Beck
+    instrument_name: dobson
+    instrument_number: '80'
+    name: Ozone/TotalOzone/dobson
+    start_date: '1972-12-05'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1/stn111/dobson
+  - data_class: Ozone
+    dataset: TotalOzone
+    end_date: '2012-11-01'
+    instrument_model: MKIII
+    instrument_name: brewer
+    instrument_number: '85'
+    name: Ozone/TotalOzone/brewer
+    start_date: '2008-02-10'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1/stn111/brewer
+  - data_class: Ozone
+    dataset: TotalOzoneObs
+    end_date: '2016-01-31'
+    instrument_model: MKIII
+    instrument_name: brewer
+    instrument_number: '85'
+    name: Ozone/TotalOzoneObs/brewer
+    start_date: '2012-11-01'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzoneObs_1.0_1/stn111/brewer
+  - data_class: Ozone
+    dataset: TotalOzone
+    end_date: '1963-11-01'
+    instrument_model: Beck
+    instrument_name: dobson
+    instrument_number: '0'
+    name: Ozone/TotalOzone/dobson
+    start_date: '1961-11-17'
+    url: https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1/stn111/dobson
+  - data_class: Ozone
+    dataset: OzoneSonde
+    end_date: '1966-01-10'
+    instrument_model: UNKNOWN
+    instrument_name: regener
+    instrument_number: UNKNOWN
+    name: Ozone/OzoneSonde/regener
+    start_date: '1962-03-26'
+    url: https://woudc.org/archive/Archive-NewFormat/OzoneSonde_1.0_1/stn111/regener
+mcf:
+  version: 1.0
+metadata:
+  charset: utf8
+  datestamp: '2020-09-01'
+  identifier: '111'
+  language: en
+  language_alternate: fr
