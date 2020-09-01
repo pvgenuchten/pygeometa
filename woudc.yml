@@ -69,3 +69,48 @@ metadata:
   identifier: '111'
   language: en
   language_alternate: fr
+
+
+
+			<wmdr:observation>
+				<wmdr:ObservingCapability gml:id="oc_1">
+					<wmdr:facility nilReason="inapplicable"/>
+					<wmdr:programAffiliation nilReason="inapplicable"/>
+					<wmdr:observation>
+						<om:OM_Observation gml:id="obs_1">
+							<gml:name>UV Radiation/Spectral/biospherical</gml:name>
+							<om:phenomenonTime>
+								<gml:TimePeriod gml:id="id7">
+									<gml:beginPosition>2010-09-15</gml:beginPosition>
+									<gml:endPosition>2014-03-31</gml:endPosition>
+								</gml:TimePeriod>
+							</om:phenomenonTime>
+							<om:resultTime  nilReason="inapplicable"/>
+							<om:validTime nilReason="inapplicable"/>
+							<om:procedure/>
+					<om:observedProperty xlink:href="http://codes.wmo.int/wmdr/ObservedVariable/262"/>
+					<!-- \Atmosphere\Gas\Ozone\Surface ozone -->
+					<om:featureOfInterest xlink:href="http://codes.wmo.int/wmdr/FeatureOfInterest/atmosphere"/>							
+							<om:result>
+								<wmdr:ResultSet>
+									<wmdr:distributionInfo>
+										<gmd:MD_Distribution>
+											<gmd:transferOptions>
+												<gmd:MD_DigitalTransferOptions>
+													<gmd:onLine>
+														<gmd:CI_OnlineResource>
+															<gmd:linkage>
+																<gmd:URL>https://woudc.org/archive/Archive-NewFormat/Spectral_1.0_1/stn111/biospherical</gmd:URL>
+															</gmd:linkage>
+														</gmd:CI_OnlineResource>
+													</gmd:onLine>
+												</gmd:MD_DigitalTransferOptions>
+											</gmd:transferOptions>
+										</gmd:MD_Distribution>
+									</wmdr:distributionInfo>
+								</wmdr:ResultSet>
+							</om:result>
+						</om:OM_Observation>
+					</wmdr:observation>
+				</wmdr:ObservingCapability>
+			</wmdr:observation>
