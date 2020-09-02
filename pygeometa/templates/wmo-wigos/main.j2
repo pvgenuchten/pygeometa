@@ -195,21 +195,26 @@
             {% for obs in v['observations'] %}
             <wmdr:observation>
                 <wmdr:ObservingCapability gml:id="oc_{{loop.index }}">
-                    <wmdr:facility/>
-                    <wmdr:programAffiliation/>
+                    <wmdr:facility nilReason="inapplicable"/>
+                    <wmdr:programAffiliation nilReason="inapplicable"/>
                     <wmdr:observation>
                         <om:OM_Observation gml:id="obs_{{ loop.index }}">
-                            <gml:name>{{ obs['data_class'] }}/{{ obs['dataset'] }}/{{ obs['instrument_name'] }}</gml:name>
+                            <gml:name>{{ obs['name'] }}</gml:name>
                             <om:phenomemonTime>
                                 <gml:TimePeriod gml:id="id7">
-                                    <gml:beginPosition>{{ obs['start_date'] }}</gml:beginPosition>
-                                    {% if obs['end_date'] %}
-                                    <gml:endPosition>{{ obs['end_date'] }}</gml:endPosition>
+                                    <gml:beginPosition>{{ obs['timeperiod']['begin'] }}</gml:beginPosition>
+                                    {% if obs['timeperiod']['end'] %}
+                                    <gml:endPosition>{{ obs['timeperiod']['end'] }}</gml:endPosition>
                                     {% else %}
                                         <gml:endPosition indeterminatePosition="now"/>
                                     {% endif %}
                                 </gml:TimePeriod>
                             </om:phenomemonTime>
+                            <om:resultTime nilReason="inapplicable"/>
+                            <om:validTime nilReason="inapplicable"/>
+                            <om:procedure/>
+                            <om:observedProperty xlink:href="http://codes.wmo.int/wmdr/_{{ obs['observedproperty']['type'] }}/{{ obs['observedproperty']['name'] }}"/>
+                            <om:featureOfInterest xlink:href="http://codes.wmo.int/wmdr/FeatureOfInterest/{{ obs['observedproperty']['type'] }}"/>  
                             <om:result>
                                 <wmdr:ResultSet>
                                     <wmdr:distributionInfo>
@@ -219,7 +224,7 @@
                                                     <gmd:onLine>
                                                         <gmd:CI_OnlineResource>
                                                             <gmd:linkage>
-                                                                <gmd:URL>{{ obs['waf_url'] }}</gmd:URL>
+                                                                <gmd:URL>{{ obs['url'] }}</gmd:URL>
                                                             </gmd:linkage>
                                                         </gmd:CI_OnlineResource>
                                                     </gmd:onLine>
