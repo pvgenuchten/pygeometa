@@ -9,58 +9,71 @@
         <link rel="canonical" href="https://geopython.github.io/pygeometa/tutorial/">
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Tutorial - pygeometa: Metadata Creation for the Rest of Us</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
-                <a class="navbar-brand" href="..">pygeometa: Metadata Creation for the Rest of Us</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">pygeometa: Metadata Creation for the Rest of Us</a>
+                </div>
 
                 <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="https://github.com/geopython/pygeometa" class="nav-link">Code</a>
+                            <li >
+                                <a href="https://github.com/geopython/pygeometa">Code</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Tutorial</a>
+                            <li class="active">
+                                <a href="./">Tutorial</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li>
-    <a href="../reference/mcf/" class="dropdown-item">Metadata Control File</a>
+<li >
+    <a href="../reference/mcf/">Metadata Control File</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Formats</a>
+    <a href="#">Formats</a>
     <ul class="dropdown-menu">
             
-<li>
-    <a href="../reference/formats/hnap/" class="dropdown-item">ISO Harmonized North American Profile (HNAP)</a>
+<li >
+    <a href="../reference/formats/iso19139-hnap/">ISO Harmonized North American Profile (HNAP)</a>
 </li>
             
-<li>
-    <a href="../reference/formats/wmo-cmp/" class="dropdown-item">WMO Core Metadata Profile</a>
+<li >
+    <a href="../reference/formats/wmo-cmp/">WMO Core Metadata Profile</a>
 </li>
             
-<li>
-    <a href="../reference/formats/wmo-wigos/" class="dropdown-item">WMO WIGOS Metadata Standard</a>
+<li >
+    <a href="../reference/formats/wmo-wigos/">WMO WIGOS Metadata Standard</a>
 </li>
     </ul>
   </li>
@@ -68,24 +81,24 @@
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                            <li class="disabled">
+                                <a rel="next" >
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../reference/mcf/" class="nav-link">
+                            <li >
+                                <a rel="prev" href="../reference/mcf/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/geopython/pygeometa/edit/master/docs/content/tutorial.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li>
+                                <a href="https://github.com/geopython/pygeometa/edit/master/docs/content/tutorial.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -93,50 +106,18 @@
         </div>
 
         <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#pygeometa-tutorial" class="nav-link">pygeometa Tutorial</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#overview" class="nav-link">Overview</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#for-users" class="nav-link">For Users</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#for-developers" class="nav-link">For Developers</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#development" class="nav-link">Development</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#releasing" class="nav-link">Releasing</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#history" class="nav-link">History</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#pygeometa-tutorial">pygeometa Tutorial</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#for-users">For Users</a></li>
+            <li><a href="#for-developers">For Developers</a></li>
+            <li><a href="#development">Development</a></li>
+            <li><a href="#releasing">Releasing</a></li>
+            <li><a href="#history">History</a></li>
+    </ul>
 </div></div>
-                    <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="pygeometa-tutorial">pygeometa Tutorial</h1>
 <h2 id="overview">Overview</h2>
@@ -159,21 +140,24 @@ more information.</p>
 <li>Modify the <a href="https://github.com/geopython/pygeometa/blob/master/sample.yml">sample.yml</a> example</li>
 <li>pygeometa supports nesting MCFs together, allowing providing a single MCF
      for common metadata parameters (e.g. common contact information)</li>
-<li>Refer to the <a href="https://geopython.github.io/pygeometa/reference/formats/mcf">Metadata Control File Reference documentation</a> </li>
+<li>Refer to the <a href="https://geopython.github.io/pygeometa/reference/mcf">Metadata Control File Reference documentation</a> </li>
 <li>Run pygeometa for the .yml file with a specified target metadata schema</li>
 </ol>
 <h3 id="running">Running</h3>
-<pre><code class="bash"># generate an ISO document to stdout
+<pre><code class="bash"># provide a basic sanity check/report on an MCF (Metadata Control File)
+pygeometa info --mcf=path/to/file.yml
+
+# generate an ISO 19139 document to stdout
 pygeometa generate-metadata --mcf=path/to/file.yml --schema=iso19139
 
-# generate an ISO document and save to disk
+# generate an ISO 19139 document to disk
 pygeometa generate-metadata --mcf=path/to/file.yml --schema=iso19139 --output=some_file.xml
 
-# generate an ISO document, save to disk and set verbosity (ERROR, WARNING, INFO, DEBUG) for debugging issues
-pygeometa generate-metadata --mcf=path/to/file.yml --schema=iso19139 --output=some_file.xml --verbosity=DEBUG
+# generate an ISO 19139 document to disk with debugging (ERROR, WARNING, INFO, DEBUG)
+pygeometa generate-metadata --mcf=path/to/file.yml --schema=iso19139 --output=some_file.xml --verbosity=DEBUG # add verbose (ERROR, WARNING, INFO, DEBUG)
 
-# to use your own defined schema:
-pygeometa generate-metadata --mcf=path/to/file.yml --schema_local=/path/to/my-schema --output=some_file.xml
+# use your own defined schema
+pygeometa generate-metadata --mcf=path/to/file.yml --schema_local=/path/to/my-schema --output=some_file.xml  # to file
 </code></pre>
 
 <h3 id="migration">Migration</h3>
@@ -207,21 +191,26 @@ python setup.py install
 </code></pre>
 
 <h3 id="using-the-api-from-python">Using the API from Python</h3>
-<pre><code class="python">from pygeometa.core import render_template
+<pre><code class="python">from pygeometa.core import read_mcf, render_j2_template
+
+# read from disk
+mcf_dict = read_mcf('/path/to/file.yml')
+# read from string
+mcf_dict = read_mcf(mcf_string)
+
+# choose ISO 19139 output schema
+from pygeometa.schemas.iso19139 import ISO19139OutputSchema
+iso_os = ISO19139OutputSchema()
+
 # default schema
-xml_string = render_template('/path/to/file.yml', schema='iso19139')
+xml_string = render_j2_template(mcf_dict, template_dir=iso_os.template_dir)
+
 # user-defined schema
-xml_string = render_template('/path/to/file.yml', schema_local='/path/to/new-schema')
-# dictionary representation of YAML
-xml_string = render_template(yaml_dict, schema='iso19139')
-with open('output.xml', 'w') as ff:
+xml_string = render_j2_template(mcf_dict, schema_local='/path/to/new-schema')
+
+# write to disk
+with open('output.xml', 'wb') as ff:
     ff.write(xml_string)
-# render from an MCF stored in a string
-mcf_string = '...'  # some string
-xml_string = render_template_string(mcf_string, schema='iso19139')
-# render from an MCF as a ConfigParser object
-mcf_cp = '...'  # some ConfigParser object
-xml_string = render_template_string(mcf_cp, schema='iso19139')
 </code></pre>
 
 <h2 id="development">Development</h2>
@@ -232,13 +221,34 @@ requirements:</p>
 </code></pre>
 
 <h3 id="adding-a-metadata-schema-to-the-core">Adding a Metadata Schema to the Core</h3>
-<p>List of supported metadata schemas in <code>pygeometa/templates/</code></p>
-<p>To add support to new metadata schemas:</p>
-<pre><code class="bash">cp -r pygeometa/templates/iso19139 pygeometa/templates/new-schema
+<p>Adding an output metadata schemas to pygeometa involves extending
+<code>pygeometa.schemas.base.BaseOutputSchema</code> and supporting the <code>write</code>
+function to return a string of exported metadata content.  If you are using
+Jinja2 templates, see the next section.  If you are using another means of
+generating metadata (lxml, xml.etree, json, etc.), override the ABS <code>write</code>
+class to emit a string using your tooling/workflow accordingly.  See the
+below sections for examples.</p>
+<p>Once you have added your metadata schema, you need to register it with
+pygeometa's schema registry:</p>
+<pre><code class="bash">vi pygeometa/schemas/__init__.py
+# edit the SCHEMAS dict with the metadata schema name and dotted path of class
 </code></pre>
 
-<p>Then modify <code>*.j2</code> files in the new <code>pygeometa/templates/new-schema</code> directory
+<h4 id="jinja2-templates">Jinja2 templates</h4>
+<p>To add support for a new metadata schema using Jinja2 templates:</p>
+<pre><code class="bash">cp -r pygeometa/schemas/iso19139 pygeometa/schemas/new-schema
+</code></pre>
+
+<p>Then modify <code>*.j2</code> files in the new <code>pygeometa/schemas/new-schema</code> directory
 to comply to new metadata schema.</p>
+<h4 id="custom-tooling">Custom tooling</h4>
+<p>To add support for a new metadata schemas using other tooling/workflow:</p>
+<pre><code class="bash">mkdir pygeometa/schemas/foo
+cp pygeometa/schemas/iso19139/__init__.py pygeometa/schemas/foo
+vi pygeometa/schemas/foo/__init__.py
+# update class name and super().__init__() function accordingly 
+</code></pre>
+
 <h3 id="running-tests">Running Tests</h3>
 <pre><code class="bash"># via distutils
 python setup.py test
@@ -266,7 +276,6 @@ pulled out of pygdm to focus on the core requirement of generating geospatial
 metadata within a real-time environment and automated workflows.</p>
 <p>In 2015 pygeometa was made publically available in support of the Treasury
 Board <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=27122">Policy on Acceptable Network and Device Use</a>.</p></div>
-            </div>
         </div>
 
         <footer class="col-md-12">
@@ -281,19 +290,19 @@ Board <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=27122">Policy on Acc
         <script src="../js/base.js" defer></script>
         <script src="../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form>
+                <form role="form">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
@@ -304,12 +313,12 @@ Board <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=27122">Policy on Acc
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">

@@ -9,58 +9,71 @@
         <link rel="canonical" href="https://geopython.github.io/pygeometa/reference/formats/wmo-wigos/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>WMO WIGOS Metadata Standard - pygeometa: Metadata Creation for the Rest of Us</title>
-        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
         <script src="../../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
-                <a class="navbar-brand" href="../../..">pygeometa: Metadata Creation for the Rest of Us</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">pygeometa: Metadata Creation for the Rest of Us</a>
+                </div>
 
                 <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="https://github.com/geopython/pygeometa" class="nav-link">Code</a>
+                            <li >
+                                <a href="https://github.com/geopython/pygeometa">Code</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../../../tutorial/" class="nav-link">Tutorial</a>
+                            <li >
+                                <a href="../../../tutorial/">Tutorial</a>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li>
-    <a href="../../mcf/" class="dropdown-item">Metadata Control File</a>
+<li >
+    <a href="../../mcf/">Metadata Control File</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Formats</a>
+    <a href="#">Formats</a>
     <ul class="dropdown-menu">
             
-<li>
-    <a href="../hnap/" class="dropdown-item">ISO Harmonized North American Profile (HNAP)</a>
+<li >
+    <a href="../iso19139-hnap/">ISO Harmonized North American Profile (HNAP)</a>
 </li>
             
-<li>
-    <a href="../wmo-cmp/" class="dropdown-item">WMO Core Metadata Profile</a>
+<li >
+    <a href="../wmo-cmp/">WMO Core Metadata Profile</a>
 </li>
             
-<li>
-    <a href="./" class="dropdown-item active">WMO WIGOS Metadata Standard</a>
+<li class="active">
+    <a href="./">WMO WIGOS Metadata Standard</a>
 </li>
     </ul>
   </li>
@@ -68,24 +81,24 @@
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../wmo-cmp/" class="nav-link">
+                            <li >
+                                <a rel="next" href="../wmo-cmp/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/geopython/pygeometa/edit/master/docs/content/reference/formats/wmo-wigos.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li>
+                                <a href="https://github.com/geopython/pygeometa/edit/master/docs/content/reference/formats/wmo-wigos.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -93,34 +106,14 @@
         </div>
 
         <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#wmo-wigos-metadata-standard-reference" class="nav-link">WMO WIGOS Metadata Standard Reference</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#codes" class="nav-link">Codes</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#sections" class="nav-link">Sections</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#wmo-wigos-metadata-standard-reference">WMO WIGOS Metadata Standard Reference</a></li>
+            <li><a href="#codes">Codes</a></li>
+            <li><a href="#sections">Sections</a></li>
+    </ul>
 </div></div>
-                    <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="wmo-wigos-metadata-standard-reference">WMO WIGOS Metadata Standard Reference</h1>
 <p>This documentation focuses on the <a href="https://library.wmo.int/opac/doc_num.php?explnum_id=3653">WMO WIGOS Metadata Standard</a> based schema
@@ -467,7 +460,6 @@ allows for specifying 0..n child objects to model topography or bathymetry descr
 </tr>
 </tbody>
 </table></div>
-            </div>
         </div>
 
         <footer class="col-md-12">
@@ -482,19 +474,19 @@ allows for specifying 0..n child objects to model topography or bathymetry descr
         <script src="../../../js/base.js" defer></script>
         <script src="../../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form>
+                <form role="form">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
@@ -505,12 +497,12 @@ allows for specifying 0..n child objects to model topography or bathymetry descr
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">

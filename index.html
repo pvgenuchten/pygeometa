@@ -9,58 +9,71 @@
         <link rel="canonical" href="https://geopython.github.io/pygeometa/">
         <link rel="shortcut icon" href="img/favicon.ico">
         <title>pygeometa: Metadata Creation for the Rest of Us</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
+        <script src="js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body class="homepage">
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
-                <a class="navbar-brand" href=".">pygeometa: Metadata Creation for the Rest of Us</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=".">pygeometa: Metadata Creation for the Rest of Us</a>
+                </div>
 
                 <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="https://github.com/geopython/pygeometa" class="nav-link">Code</a>
+                            <li >
+                                <a href="https://github.com/geopython/pygeometa">Code</a>
                             </li>
-                            <li class="navitem">
-                                <a href="tutorial/" class="nav-link">Tutorial</a>
+                            <li >
+                                <a href="tutorial/">Tutorial</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li>
-    <a href="reference/mcf/" class="dropdown-item">Metadata Control File</a>
+<li >
+    <a href="reference/mcf/">Metadata Control File</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Formats</a>
+    <a href="#">Formats</a>
     <ul class="dropdown-menu">
             
-<li>
-    <a href="reference/formats/hnap/" class="dropdown-item">ISO Harmonized North American Profile (HNAP)</a>
+<li >
+    <a href="reference/formats/iso19139-hnap/">ISO Harmonized North American Profile (HNAP)</a>
 </li>
             
-<li>
-    <a href="reference/formats/wmo-cmp/" class="dropdown-item">WMO Core Metadata Profile</a>
+<li >
+    <a href="reference/formats/wmo-cmp/">WMO Core Metadata Profile</a>
 </li>
             
-<li>
-    <a href="reference/formats/wmo-wigos/" class="dropdown-item">WMO WIGOS Metadata Standard</a>
+<li >
+    <a href="reference/formats/wmo-wigos/">WMO WIGOS Metadata Standard</a>
 </li>
     </ul>
   </li>
@@ -68,14 +81,14 @@
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/geopython/pygeometa/edit/master/docs/content/index.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li>
+                                <a href="https://github.com/geopython/pygeometa/edit/master/docs/content/index.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -83,36 +96,14 @@
         </div>
 
         <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="2"><a href="#pygeometa" class="nav-link">pygeometa</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#features" class="nav-link">Features</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#history" class="nav-link">History</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-        </ul>
-    </div>
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#pygeometa">pygeometa</a></li>
+        <li class="main "><a href="#features">Features</a></li>
+        <li class="main "><a href="#history">History</a></li>
+    </ul>
 </div></div>
-                    <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h2 id="pygeometa">pygeometa</h2>
 <p><a href="https://gitter.im/geopython/pygeometa"><img alt="Join the chat at https://gitter.im/geopython/pygeometa" src="https://badges.gitter.im/Join%20Chat.svg" /></a> </p>
@@ -133,13 +124,13 @@ find the format you're looking for?  Element(s) missing from a given format?
 Feel free to open an <a href="https://github.com/geopython/pygeometa/issues">issue</a>!</p>
 <p>pygeometa has minimal dependencies (install is less than 50K), and provides
 a flexible extension mechanism leveraging the Jinja2 templating system.</p>
-<p>pygeoapi is <a href="https://opensource.org">open source</a> and released under an
-<a href="https://github.com/geopython/pygeoapi/blob/master/LICENSE.md">MIT license</a>.</p>
+<p>pygeometa is <a href="https://opensource.org">open source</a> and released under an
+<a href="https://github.com/geopython/pygeometa/blob/master/LICENSE.md">MIT license</a>.</p>
 <h2 id="features">Features</h2>
 <ul>
 <li>simple YAML-based configuration</li>
-<li>extensible: template architecture allows for easy addition of new metadata
-  formats</li>
+<li>extensible: plugin architecture allows for easy addition of new metadata
+  formats using Jinja2 templates or custom workflow (JSON, YAML, CSV, etc.)</li>
 <li>flexible: use as a command-line tool or integrate as a library</li>
 </ul>
 <h2 id="history">History</h2>
@@ -150,7 +141,6 @@ pulled out of pygdm to focus on the core requirement of generating geospatial
 metadata within a real-time environment and automated workflows.</p>
 <p>In 2015 pygeometa was made publically available in support of the Treasury
 Board <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=27122">Policy on Acceptable Network and Device Use</a>.</p></div>
-            </div>
         </div>
 
         <footer class="col-md-12">
@@ -165,19 +155,19 @@ Board <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=27122">Policy on Acc
         <script src="js/base.js" defer></script>
         <script src="search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form>
+                <form role="form">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
@@ -188,12 +178,12 @@ Board <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=27122">Policy on Acc
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">
@@ -233,6 +223,6 @@ Board <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=27122">Policy on Acc
 </html>
 
 <!--
-MkDocs version : 1.1
-Build Date UTC : 2020-06-11 11:14:34
+MkDocs version : 1.0.4
+Build Date UTC : 2020-11-15 22:10:46
 -->
