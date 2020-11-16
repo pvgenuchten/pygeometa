@@ -279,20 +279,6 @@ iconv -f iso8859-1 -t utf-8 file.yml &gt; file.yml.new
 <td>point</td>
 <td align="right">ISO 19115:2003 B.5.15</td>
 </tr>
-<tr>
-<td>crs</td>
-<td>Mandatory</td>
-<td>EPSG code identifier</td>
-<td>4326</td>
-<td align="right">ISO 19115:2003 B.2.7.3</td>
-</tr>
-<tr>
-<td>bbox</td>
-<td>Mandatory</td>
-<td>geographic position of the dataset, formatted as 'minx,miny,maxx,maxy'</td>
-<td>-141,42,-52,84</td>
-<td align="right">ISO 19115:2003 Section B.3.1.2</td>
-</tr>
 </tbody>
 </table>
 <h3 id="identification"><code>identification</code></h3>
@@ -455,20 +441,6 @@ iconv -f iso8859-1 -t utf-8 file.yml &gt; file.yml.new
 <td align="right">ISO 19115:2003 Section B.2.1</td>
 </tr>
 <tr>
-<td>temporal_begin</td>
-<td>Mandatory</td>
-<td>Starting time period covered by the content of the dataset, either time period (startdate/enddate) or a single point in time value</td>
-<td>1950-07-31</td>
-<td align="right">ISO 19115:2003 Section B.3.1.3</td>
-</tr>
-<tr>
-<td>temporal_end</td>
-<td>Mandatory</td>
-<td>End time period covered by the content of the dataset, either time period (startdate/enddate) or a single point in time value.  For data updated in realtime, use the term <code>now</code></td>
-<td>now</td>
-<td align="right">ISO 19115:2003 Section B.3.1.3</td>
-</tr>
-<tr>
 <td>status</td>
 <td>Mandatory</td>
 <td>"the status of the resource(s) (must be one of 'planned','historicalArchive','completed','onGoing', 'underDevelopment','required','obsolete')",completed,ISO 19115:2003 Section B.2.2.1</td>
@@ -491,8 +463,62 @@ iconv -f iso8859-1 -t utf-8 file.yml &gt; file.yml.new
 </tr>
 </tbody>
 </table>
+<h3 id="identificationextents"><code>identification.extents</code></h3>
+<p>MCF <code>identification.extents</code> sections can have 1..n <code>spatial</code> and <code>temporal</code> sections as required with the following properties.</p>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Mandatory/Optional</th>
+<th>Description</th>
+<th>Example</th>
+<th align="right">Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bbox</td>
+<td>Mandatory</td>
+<td>geographic position of the dataset, formatted as as list of 'minx,miny,maxx,maxy'</td>
+<td>-141,42,-52,84</td>
+<td align="right">ISO 19115:2003 Section B.3.1.2</td>
+</tr>
+<tr>
+<td>crs</td>
+<td>Mandatory</td>
+<td>EPSG code identifier</td>
+<td>4326</td>
+<td align="right">ISO 19115:2003 B.2.7.3</td>
+</tr>
+<tr>
+<td>temporal.begin</td>
+<td>Mandatory</td>
+<td>Starting time period covered by the content of the dataset, either time period (startdate/enddate) or a single point in time value</td>
+<td>1950-07-31</td>
+<td align="right">ISO 19115:2003 Section B.3.1.3</td>
+</tr>
+<tr>
+<td>temporal.end</td>
+<td>Mandatory</td>
+<td>End time period covered by the content of the dataset, either time period (startdate/enddate) or a single point in time value.  For data updated in realtime, use the term <code>now</code></td>
+<td>now</td>
+<td align="right">ISO 19115:2003 Section B.3.1.3</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="yaml">identification:
+    ...
+    extents:
+        spatial:
+            - bbox: [-141,42,-52,84]
+              crs: 4326
+        temporal:
+            - begin: 1950-07-31
+              end: now
+</code></pre>
+
 <h3 id="identificationkeywords"><code>identification.keywords</code></h3>
-<p>MCF <code>identification</code> sections can be 1..n <code>keywords</code> sections as required using nesting.  Example:</p>
+<p>MCF <code>identification</code> sections can have 1..n <code>keywords</code> sections as required using nesting.  Example:</p>
 <pre><code class="yaml">identification:
     ...
     keywords:

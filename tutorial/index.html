@@ -144,7 +144,13 @@ more information.</p>
 <li>Run pygeometa for the .yml file with a specified target metadata schema</li>
 </ol>
 <h3 id="running">Running</h3>
-<pre><code class="bash"># provide a basic sanity check/report on an MCF (Metadata Control File)
+<pre><code class="bash"># show all subcommands
+pygeometa
+
+# show all supported schemas
+pygeometa schemas
+
+# provide a basic sanity check/report on an MCF (Metadata Control File)
 pygeometa info --mcf=path/to/file.yml
 
 # generate an ISO 19139 document to stdout
@@ -160,15 +166,6 @@ pygeometa generate-metadata --mcf=path/to/file.yml --schema=iso19139 --output=so
 pygeometa generate-metadata --mcf=path/to/file.yml --schema_local=/path/to/my-schema --output=some_file.xml  # to file
 </code></pre>
 
-<h3 id="migration">Migration</h3>
-<h4 id="migrating-old-mcfs-to-yaml">Migrating old MCFs to YAML</h4>
-<p>pygeometa provides a <code>migrate</code> utility to convert legacy MCFs into YAML:</p>
-<pre><code class="bash">pygeometa migrate --mcf=path/to/file.mcf  # to stdout
-pygeometa migrate --mcf=path/to/file.mcf --output=some_file.yml  # to file
-</code></pre>
-
-<p>The migrate utility doesn't support migrating comments from legacy MCFs to
-YAML MCFs.</p>
 <h2 id="for-developers">For Developers</h2>
 <h3 id="installation_1">Installation</h3>
 <p>pygeometa is best installed and used within a Python virtualenv.</p>
