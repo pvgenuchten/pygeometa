@@ -505,6 +505,11 @@ class PygeometaTest(unittest.TestCase):
                 mcf['identification']['browsegraphic'],
                 "https://avatars.githubusercontent.com/u/1855122",
                 'Expected specific browsegraphic')
+            # get additional identifiers
+            add_ids = [i['identifier'] for i in mcf['metadata']['additional_identifiers']]
+            assert "par-augsnu-agrokimisko-izpeti-un-minerala-slapekla-monitoringu" in add_ids, f"`par-augsnu-agrokimisko-izpeti-un-minerala-slapekla-monitoringu` (gmd-identifier) not found in additional-identifiers {add_ids}"
+            assert "http://www.vaad.gov.lv/sakums/informacija-sabiedribai/par-augsnu-agrokimisko-izpeti-un-minerala-slapekla-monitoringu.aspx" in add_ids, f"`http://www.va...` (datasetURI) not found in additional-identifiers {add_ids}"
+    
         with open(get_abspath('707a02ac-9240-4a2d-afbd-395b69756534.xml')) as fh:  # noqa
             # owslib does currently not parse gmd:polygon -> empty box
             mcf = schema.import_(fh.read())
