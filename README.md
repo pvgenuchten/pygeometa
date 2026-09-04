@@ -179,8 +179,7 @@ vi pygeometa/schemas/foo/__init__.py
 ### Running Tests
 
 ```bash
-cd tests
-python3 run_tests.py
+pytest tests
 ```
 
 ## Releasing
