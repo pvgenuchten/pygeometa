@@ -148,6 +148,18 @@
             </gmd:CI_Date>
           </gmd:date>
           {% endfor %}
+          {% if record['metadata']['additional_identifiers'] %}
+            {% for code in record['metadata']['additional_identifiers'] %}
+            <gmd:identifier>
+              <gmd:MD_Identifier>
+                <gmd:code><gco:CharacterString>{{ code.get('identifier') }}</gco:CharacterString></gmd:code>
+                {% if code['scheme'] %}
+                <gmd:codeSpace><gco:CharacterString>{{ code.get('scheme') }}</gco:CharacterString></gmd:codeSpace>
+                {% endif %}
+              </gmd:MD_Identifier>
+            </gmd:identifier>
+            {% endfor %}
+          {% endif %}
           {% if record['identification']['edition'] %}
           {{ cs.get_freetext('edition', record['metadata']['language_alternate'], get_charstring(record['identification'].get('edition'), record['metadata']['language'], record['metadata']['language_alternate'])) }}
           {% endif %}

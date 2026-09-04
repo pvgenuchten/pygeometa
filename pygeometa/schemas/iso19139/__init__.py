@@ -110,29 +110,23 @@ class ISO19139OutputSchema(BaseOutputSchema):
         elif m.languagecode:
             mcf['metadata']['language'] = m.languagecode
 
-        LOGGER.debug('Setting alternate identifiers')
+        LOGGER.debug('Setting dataseturi')
         if hasattr(m, 'dataseturi') and m.dataseturi not in [None, '']:
-            mcf.setdefault('metadata',{}).setdefault(
-                'additional_identifiers',[]).append({
-                    'identifier': m.dataseturi,
-                    'scheme': 'URI'
-                })
+            mcf.setdefault('metadata', {})['dataseturi'] = m.dataseturi
 
         # identification is an array, use first (fails if not exists)
         identification = next(iter(m.identification), {})
 
         LOGGER.debug('gmd identifier as additional_identifier')
-        if hasattr(identification, 'uricode'):
+        if hasattr(identification, 'uricode') and identification.uricode and isinstance(identification.uricode, list):  # noqa 
+            codes = []
             for uricode in identification.uricode:
-                if uricode not in [None, '']:
-                    cs = ''
-                    if hasattr(identification, 'uricodespace') and identification.uricodespace and isinstance(identification.uricodespace, list):  # noqa
-                        cs = next(iter(identification.uricodespace))
-                    mcf.setdefault('metadata',{}).setdefault(
-                        'additional_identifiers',[]).append({
-                            'identifier': uricode,
-                            'scheme': cs
-                        })
+                codes.append({'identifier': uricode})
+            if hasattr(identification, 'uricodespace') and identification.uricodespace and isinstance(identification.uricodespace, list):  # noqa 
+                if len(identification.uricodespace) <= len(identification.uricode):  # noqa
+                    for i in range(0, len(identification.uricodespace)):
+                        codes[i]['scheme'] = identification.uricodespace
+            mcf.setdefault('metadata', {})['additional_identifiers'] = codes
 
         LOGGER.debug('Setting identification')
         mcf['identification']['title'] = identification.title
